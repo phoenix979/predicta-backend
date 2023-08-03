@@ -16,6 +16,8 @@ Navigate to the project directory:
 cd backend
 ```
 
+adjust the parameters in .env.template file and rename it to be .env
+
 Install the dependencies:
 
 ```
