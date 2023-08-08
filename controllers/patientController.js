@@ -7,8 +7,8 @@ router.get('/patient', async (req, res) => {
         const { patientId } = req.query;
         
         // Try to get the patient data
-        console.log("my access token is:" + process.env.ACCESS_TOKEN)
-        const patientData = await patientService.getPatientData(patientId, process.env.ACCESS_TOKEN);
+        console.log("my access token is:" + req.session.access_token)
+        const patientData = await patientService.getPatientData(patientId, req.session.access_token);
         res.json(patientData);
     } catch (error) {
         console.error('Failed to fetch patient data with current token, re-authorizing...', error);

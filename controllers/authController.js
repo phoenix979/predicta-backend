@@ -57,7 +57,7 @@ router.get('/callback', async (req, res) => {
         });
     
         // store access token
-        process.env.ACCESS_TOKEN = response.data.access_token;
+        req.session.access_token = response.data.access_token;
     
         // Redirect back to the patient endpoint with the patientId
         res.redirect(`/patient?patientId=${state}`);
